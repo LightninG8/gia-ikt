@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Решение первой части ЕГЭ информатика на Python</title>
+  <link rel="shortcut icon" href="../img/favicon.png" type="image/png">
+
+  <!-- stylesheets -->
+  <link href="../styles/general.css" rel="stylesheet"/>
+  <link href="../styles/exercise2.css" rel="stylesheet"/>
+
+  <!-- fonts -->
+  <link href="../fonts/Roboto/index.css" rel="stylesheet"/>
+
+  <!-- libraries -->
+  <link href="../styles/github-theme.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__body container">
+      <div class="logo header__logo">
+        <a href="../../index.html" class="logo__link">Решу100</a>
+      </div>
+      <nav class="header__nav nav">
+        <div class="nav__title">Задание:</div>
+        <ul class="nav__list list">
+          <li class="nav__item list__item list__item_active"><a class="nav__link" href="./exercise1.html">1</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise2.html">2</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise3.html">3</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise4.html">4</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise5.html">5</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise6.html">6</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise7.html">7</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise8.html">8</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise9.html">9</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise10.html">10</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise11.html">11</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise12.html">12</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise13.html">13</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise14.html">14</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise15.html">15</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="main">
+    <section class="section main__section container">
+      <h1 class="section__title">Задание 1</h1>
+      <div class="exercise">
+        <p class="text">
+          Логическая функция F задается выражением (¬x ≡ z) → ( y ≡ ( w ∨ x ) ). <br>
+          Дан частично заполненный фрагмент, содержащий <strong class="strong">неповторяющиеся</strong> строки таблицы
+          истинности функции F. Определите, какому столбцу таблицы истинности соответствует
+          каждая из переменных x, y, z, w.
+        </p>
+        <div class="table table_5col">
+          <div class="table__cell table__cell_header">Переменная 1</div>
+          <div class="table__cell table__cell_header">Переменная 2</div>
+          <div class="table__cell table__cell_header">Переменная 3</div>
+          <div class="table__cell table__cell_header">Переменная 4</div>
+          <div class="table__cell table__cell_header">Функция</div>
+          <div class="table__cell">???</div>
+          <div class="table__cell">???</div>
+          <div class="table__cell">???</div>
+          <div class="table__cell">???</div>
+          <div class="table__cell">F</div>
+          <div class="table__cell">0</div>
+          <div class="table__cell">0</div>
+          <div class="table__cell"></div>
+          <div class="table__cell"></div>
+          <div class="table__cell">0</div>
+          <div class="table__cell">0</div>
+          <div class="table__cell"></div>
+          <div class="table__cell"></div>
+          <div class="table__cell">0</div>
+          <div class="table__cell">0</div>
+          <div class="table__cell">0</div>
+          <div class="table__cell"></div>
+          <div class="table__cell">0</div>
+          <div class="table__cell">0</div>
+          <div class="table__cell">0</div>
+        </div>
+        <p class="text">
+          В ответе напишите буквы x, y, z, w в том порядке, в котором идут соответствующие им
+          столбцы ( сначала - буква, соответствующая первому столбцу; затем - буква, соответствующая второму столбцу, и т.д.). Буквы в ответе пишите подряд, никаких разделителей между буквами ставить не нужно.
+        </p>
+      </div>
+      <div class="solution">
+        <img class="img" src="../img/exercise2..jpg" alt="code">
+        <ol class="solution__list">
+          <li>Инверсия: <span>= ЕСЛИ(А2=1;0;1);</span</li>
+          <li>Дизъюнкция: <span>= ЕСЛИ(ИЛИ(А2=1;В2=1);1;0);</span</li>
+          <li>Конъюнкция: <span>= ЕСЛИ(И(А2=1;В2=1);1;0);</span</li>
+          <li>Импликация: <span>= ЕСЛИ(И(А2=1;В2=0);0;1);</span</li>
+          <li>Эквивалентность: <span>ЕСЛИ(А2=В2;1;0).</span</li>
+        </ol>
+        
+      </div>
+    </section>
+  </main>
+
+  <script src="../scripts/rainbow-custom.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Решение первой части ЕГЭ информатика на Python</title>
+  <link rel="shortcut icon" href="../img/favicon.png" type="image/png">
+
+  <!-- stylesheets -->
+  <link href="../styles/general.css" rel="stylesheet"/>
+  <link href="../styles/exercise2.css" rel="stylesheet"/>
+
+  <!-- fonts -->
+  <link href="../fonts/Roboto/index.css" rel="stylesheet"/>
+
+  <!-- libraries -->
+  <link href="../styles/github-theme.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__body container">
+      <div class="logo header__logo">
+        <a href="../../index.html" class="logo__link">Решу100</a>
+      </div>
+      <nav class="header__nav nav">
+        <div class="nav__title">Задание:</div>
+        <ul class="nav__list list">
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise1.html">1</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise2.html">2</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise3.html">3</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise4.html">4</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise5.html">5</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise6.html">6</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise7.html">7</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise8.html">8</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise9.html">9</a></li>
+          <li class="nav__item list__item list__item_active"><a class="nav__link" href="./exercise10.html">10</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise11.html">11</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise12.html">12</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise13.html">13</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise14.html">14</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise15.html">15</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="main">
+    <section class="section main__section container">
+      <h1 class="section__title">Задание 10</h1>
+      <div class="exercise">
+        <p class="text">На числовой прямой даны два отрезка: P = [5, 30] и Q = [14, 23]. Укажите наибольшую
+          возможную длину промежутка A, для которого формула</p>
+        <p class="equation">((x ∈ P) (x ∈ Q)) → ¬(x ∈ A)</p>
+        <p class="text">тождественно истинна, то есть принимает значение 1 при любом значении переменной х.</p>
+      </div>
+      <div class="solution">
+        <div class="code">
+          <div class="code__col">
+            <div class="code__container">
+              <pre>
+                <code data-language="python">
+def f( x, An, Ak ):
+ return not(130 <= x <= 171)
+ or not(150 <= x <= 185)\
+ or (An <= x <= Ak)
+min = 200
+for An in range(100,199):
+ for Ak in range(An+1,200):
+ OK = True
+ for x in range(1,1000):
+ if not f(x,An,Ak):
+ OK = False
+ break
+ if OK and Ak - An < min:
+ min = Ak - An
+print(min+1)
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="code__col">
+            <div class="code__container">
+              <pre>
+                <code data-language="c">
+var x,An,Ak,i,min : integer;
+ OK : boolean;
+
+function F( x, An, Ak : integer):Boolean;
+begin
+ F := not((x >= 130) and (x <= 171)) or not((x >= 150)
+ and (x <= 180)) or ((x >= An) and (x <= Ak));
+end;
+
+Begin
+min := 200;
+for An := 100 to 199 do
+ for Ak:= An+1 to 200 do begin
+ OK := True;
+ for x:=1 to 1000 do
+ if not F(x,An,Ak) then begin
+ OK := False;
+ break
+ end;
+ if (OK=True) and (Ak - An < min) then
+ min := Ak - An;
+ end;
+writeln(min+1);
+end.
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../scripts/rainbow-custom.min.js"></script>
+</body>
+</html>

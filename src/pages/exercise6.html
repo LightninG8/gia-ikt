@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Решение первой части ЕГЭ информатика на Python</title>
+  <link rel="shortcut icon" href="../img/favicon.png" type="image/png">
+
+  <!-- stylesheets -->
+  <link href="../styles/general.css" rel="stylesheet"/>
+  <link href="../styles/exercise2.css" rel="stylesheet"/>
+
+  <!-- fonts -->
+  <link href="../fonts/Roboto/index.css" rel="stylesheet"/>
+
+  <!-- libraries -->
+  <link href="../styles/github-theme.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__body container">
+      <div class="logo header__logo">
+        <a href="../../index.html" class="logo__link">Решу100</a>
+      </div>
+      <nav class="header__nav nav">
+        <div class="nav__title">Задание:</div>
+        <ul class="nav__list list">
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise1.html">1</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise2.html">2</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise3.html">3</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise4.html">4</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise5.html">5</a></li>
+          <li class="nav__item list__item list__item_active"><a class="nav__link" href="./exercise6.html">6</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise7.html">7</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise8.html">8</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise9.html">9</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise10.html">10</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise11.html">11</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise12.html">12</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise13.html">13</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise14.html">14</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise15.html">15</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="main">
+    <section class="section main__section container">
+      <h1 class="section__title">Задание 6</h1>
+      <div class="exercise">
+        <p class="text">Решите уравнение</p>
+        <p class="equation">121<sub>x</sub> + 1 = 101<sub>7</sub></p>
+        <p class="text">Ответ запишите в троичной системе счисления. Основание системы счисления
+          указывать не нужно.</p>
+      </div>
+      <div class="solution">
+        <div class="code">
+          <div class="code__col">
+            <div class="code__container">
+              <pre>
+                <code data-language="python">
+a = int(‘101’,7)
+c = a - 1
+for i in range(3,100):
+  b = int(‘121’,i)
+  if b == c:
+  x = i
+  break
+x3 = ‘’
+while x > 0:
+  x3 += str(x%3)
+  x //= 3
+x3 = x3[::-1]
+print(x3)
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="code__col">
+            <div class="code__container">
+              <pre>
+                <code data-language="c">
+var
+ x ,i: Integer;
+ b,a,c: real;
+ x3 : string;
+Begin
+a := 1*7**2 + 0 + 1;
+c := a - 1;
+for i := 3 to 99 do begin
+ b := 1*i**2 + 2*i + 1;
+ if b = c then begin
+ x := i;
+ break;
+ end;
+end;
+while x > 0 do begin
+ x3 += inttostr(x mod 3);
+ x := x div 3;
+end;
+for i:=length(x3) downto 1 do
+ write(x3[i]);
+End.
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../scripts/rainbow-custom.min.js"></script>
+</body>
+</html>

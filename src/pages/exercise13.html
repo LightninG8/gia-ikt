@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Решение первой части ЕГЭ информатика на Python</title>
+  <link rel="shortcut icon" href="../img/favicon.png" type="image/png">
+
+  <!-- stylesheets -->
+  <link href="../styles/general.css" rel="stylesheet"/>
+  <link href="../styles/exercise2.css" rel="stylesheet"/>
+
+  <!-- fonts -->
+  <link href="../fonts/Roboto/index.css" rel="stylesheet"/>
+
+  <!-- libraries -->
+  <link href="../styles/github-theme.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__body container">
+      <div class="logo header__logo">
+        <a href="../../index.html" class="logo__link">Решу100</a>
+      </div>
+      <nav class="header__nav nav">
+        <div class="nav__title">Задание:</div>
+        <ul class="nav__list list">
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise1.html">1</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise2.html">2</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise3.html">3</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise4.html">4</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise5.html">5</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise6.html">6</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise7.html">7</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise8.html">8</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise9.html">9</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise10.html">10</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise11.html">11</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise12.html">12</a></li>
+          <li class="nav__item list__item list__item_active"><a class="nav__link" href="./exercise13.html">13</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise14.html">14</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise15.html">15</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="main">
+    <section class="section main__section container">
+      <h1 class="section__title">Задание 13</h1>
+      <div class="exercise">
+        <p class="text">Рассматривается множество целых чисел, принадлежащих числовому отрезку
+          [6391; 8185], которые делятся на 11 или 17 и не делятся на 2, 13, 14, 34. Найдите количество таких чисел и минимальное из них. В ответе запишите два целых числа без
+          пробелов и других дополнительных символов: сначала количество, затем минимальное число. Для выполнения этого задания можно написать программу или
+          воспользоваться редактором электронных таблиц.</p>
+      </div>
+      <div class="solution">
+        <div class="code">
+          <div class="code__col">
+            <div class="code__container">
+              <pre>
+                <code data-language="python">
+min,cnt = 8185, 0
+for i in range (6391, 8186):
+  if ((i % 17 == 0) or (i % 11 == 0))
+  and ((i % 2 != 0) and (i % 13 != 0)
+  and (i % 14 != 0) and (i % 34 != 0)):
+  cnt += 1
+  if i < min:
+  min = i
+print(cnt, min, sep=’’)
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="code__col">
+            <div class="code__container">
+              <pre>
+                <code data-language="c">
+var count, min, i: integer;
+begin
+ min := 8185;
+ count := 0;
+ for i := 6391 to 8185 do begin
+  if (i mod 11 = 0) or
+  (i mod 17 = 0) then
+    if i mod 2 <> 0 then
+      if i mod 13 <> 0 then
+        if i mod 14 <> 0 then
+          if i mod 34 <> 0 then
+          begin
+            count := count + 1;
+            if i < min then
+              min := i;
+          end;
+  end;
+ writeln(count, min);
+end.
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="code__col">
+            <div class="code__container">
+              <pre>
+                <code data-language="c">
+#include &lt;iostream&gt;
+using namespace std;
+int main() {
+int min=8185,cnt=0,i;
+for (i = 6391; i <= 8185; i++) {
+ if ((i % 11 == 0 || i % 17 == 0) && 
+ (i % 2 != 0 && i % 13 != 0
+ && i % 14 != 0 && i % 34 != 0)) {
+ cnt++;
+ if (i < min)
+ min = i;
+ }
+ }
+ cout << cnt << min;
+ return 0;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../scripts/rainbow-custom.min.js"></script>
+</body>
+</html>

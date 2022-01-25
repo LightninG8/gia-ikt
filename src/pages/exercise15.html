@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Решение первой части ЕГЭ информатика на Python</title>
+  <link rel="shortcut icon" href="../img/favicon.png" type="image/png">
+
+  <!-- stylesheets -->
+  <link href="../styles/general.css" rel="stylesheet"/>
+  <link href="../styles/exercise2.css" rel="stylesheet"/>
+
+  <!-- fonts -->
+  <link href="../fonts/Roboto/index.css" rel="stylesheet"/>
+
+  <!-- libraries -->
+  <link href="../styles/github-theme.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__body container">
+      <div class="logo header__logo">
+        <a href="../../index.html" class="logo__link">Решу100</a>
+      </div>
+      <nav class="header__nav nav">
+        <div class="nav__title">Задание:</div>
+        <ul class="nav__list list">
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise1.html">1</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise2.html">2</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise3.html">3</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise4.html">4</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise5.html">5</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise6.html">6</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise7.html">7</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise8.html">8</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise9.html">9</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise10.html">10</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise11.html">11</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise12.html">12</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise13.html">13</a></li>
+          <li class="nav__item list__item"><a class="nav__link" href="./exercise14.html">14</a></li>
+          <li class="nav__item list__item list__item_active"><a class="nav__link" href="./exercise15.html">15</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="main">
+    <section class="section main__section container">
+      <h1 class="section__title">Задание 15</h1>
+      <div class="exercise">
+        <p class="text">
+          Ниже на четырех языках программирования записан алгоритм. Получив на вход число
+x, этот алгоритм печатает два числа: L и M. Укажите наибольшее число x, при вводе которого алгоритм печатает сначала 4, а потом 5.
+        </p>
+        <div class="table table_2col">
+          <div class="table__cell table__cell_header">C++</div>
+          <div class="table__cell table__cell_header">Python</div>
+          <div class="table__cell">
+            <pre>
+              <code data-language="c">
+#include &lt;iostream&gl;
+  using namespace std;
+
+  int main ( ) {
+    int x, L, M, Q;
+    cin >>x;
+    Q = 9;
+    L = 0;
+    while (x >= Q) {
+      L = L + 1;
+      x = x - Q;
+    }
+    M = x;
+    if (M < L) {
+      M = L;
+      L = x;
+    }
+    cout &lt;&lt;L &lt;&lt;end1 &lt;&lt;M &lt;&lt;end1;
+    return 0;
+  }
+              </code>
+            </pre>
+          </div>
+          <div class="table__cell">
+            <pre>
+              <code data-language="python">
+x = int (input ( ) )
+Q = 9
+L = 0
+while x >= Q;
+ L = L + 1;
+ x = x - Q;
+M = x;
+if M < L;
+ M = L;
+ L = x;
+print (L)
+print (M)
+              </code>
+            </pre>
+          </div>
+          <div class="table__cell table__cell_header">Алогритмический язык</div>
+          <div class="table__cell table__cell_header">Pascal</div>
+          <div class="table__cell">
+            <pre>
+              <code data-language="c">
+алг
+нач
+ цель x, L, M, Q
+ ввод x
+ Q := 9
+ L := 0
+ нц пока x >= Q
+  L := L + 1
+  x := x - Q
+ кц
+ M := x
+ если M < L
+  то
+    M := L
+    L := x
+ все
+ вывод L, мс, M
+кон
+              </code>
+            </pre>
+          </div>
+          <div class="table__cell">
+            <pre>
+              <code data-language="c">
+var x, L, M, Q: integer;
+begin
+  readln (x)
+  Q := 9;
+  L := 0;
+  while x >= Q do
+  begin
+    L := L + 1;
+    x := x - Q;
+  end;
+  M := x;
+  if M < L then
+  begin
+    M := L;
+    L := x;
+  end;
+  writeln(L);
+  writeln(M);
+end.
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="solution">
+        <div class="code">
+          <div class="code__col">
+            <div class="code__container">
+              <pre>
+                <code data-language="python">
+for i in range(1,1001):
+  x = i
+  Q = 9
+  L = 0
+  while x >= Q:
+    L = L + 1
+    x = x - Q
+    M = x
+  if M < L:
+    M = L
+    L = x
+if L == 4 and M == 5:
+  print(i)
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="code__col">
+            <div class="code__container">
+              <pre>
+                <code data-language="c">
+using namespace std;
+int main(){
+ int x, L, M, Q;
+ for( int i = 1; i <= 1000; i ++ ) {
+ x = i;
+ Q = 9;
+ L = 0;
+ while (x >= Q) {
+ L = L + 1;
+ x = x - Q;
+ }
+ M = x;
+ if (M < L) {
+ M = L;
+ L = x;
+ }
+ if( L == 4 and M == 5 )
+ cout << i << endl;
+ }
+ }
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="code__col">
+            <div class="code__container">
+              <pre>
+                <code data-language="c">
+#include &lt;iostream&gt;
+using namespace std;
+int main(){
+ int x, L, M, Q;
+ for( int i = 1; i <= 1000; i ++ ) {
+  x = i;
+  Q = 9;
+  L = 0;
+  while (x >= Q) {
+    L = L + 1;
+    x = x - Q;
+  }
+  M = x;
+  if (M < L) {
+    M = L;
+    L = x;
+  }
+  if( L == 4 and M == 5 )
+    cout << i << endl;
+ }
+ }
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../scripts/rainbow-custom.min.js"></script>
+</body>
+</html>
